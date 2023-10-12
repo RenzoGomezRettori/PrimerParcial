@@ -7,7 +7,7 @@
 - Rafael Leon
 - Renzo Gomez Rettori
 
-## Proyecto: Contador binario.
+## Proyecto: Contador
 ![Tinkercad](./Image/Arduinodosdisplay.png)
 
 ## Descripción
