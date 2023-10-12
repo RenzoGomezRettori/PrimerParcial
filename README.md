@@ -9,4 +9,4 @@ En este proyecto se diseño un contador de 0 a 99 mostrando los numeros mediente
 - Renzo Gomez Rettori
 
 ## Proyecto: Contador binario.
-![Tinkercad](./Image/Arduinodosdisplay.png)
+![Tinkercad](./Image/Arduino_dos_display.png)
