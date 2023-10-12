@@ -7,3 +7,6 @@ En este proyecto se diseño un contador de 0 a 99 mostrando los numeros mediente
 ## Integrantes 
 - Rafael Leon
 - Renzo Gomez Rettori
+
+## Proyecto: Contador binario.
+![Tinkercad](./Image/arduino.png)
