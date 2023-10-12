@@ -1,5 +1,4 @@
-# PrimerParcial
-En este proyecto se diseño un contador de 0 a 99 mostrando los numeros mediente dos display y teniendo 3 botones para poder bajar, subir o reiniciar la cuenta
+
 # Documentación 
 ![Tinkercad](./Image/arduino.png)
 
@@ -10,3 +9,6 @@ En este proyecto se diseño un contador de 0 a 99 mostrando los numeros mediente
 
 ## Proyecto: Contador binario.
 ![Tinkercad](./Image/Arduinodosdisplay.png)
+
+# PrimerParcial
+En este proyecto se diseño un contador de 0 a 99 mostrando los numeros mediente dos display y teniendo 3 botones para poder bajar, subir o reiniciar la cuenta
