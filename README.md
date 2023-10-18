@@ -26,6 +26,13 @@ entre los 50° a 100° grados celcius
 
 ## Función
 
+## Boton deslizante
+![Tinkercad](./Image/BotonDeslizante.png)
+Los interruptores son dispositivos eléctricos que tienen dos estados fijos, apagado y encendido, normalmente se les cambia de estado mediante un mecanismo.
+
+
+
+
 ## :alien: Links del os proyectos
 - [ProyectoParteUno](https://www.tinkercad.com/things/hkAItijYbKW-primerparcial/editel)
 - [ProyectoParteDos](https://www.tinkercad.com/things/5mqfWWkbnb2-copy-of-primerparcialmotor2parte/editel?tenant=circuits)
