@@ -1,0 +1,297 @@
+#define A 10
+#define B 11
+#define C 5
+#define D 6
+#define E 7
+#define F 9
+#define G 8
+
+#define DECENA A5
+#define UNIDAD A4
+
+#define INTERRUPTOR 2 //Pin del interruptor
+
+#define SENSOR_TEMPERATURA A1 //Pin para el sensor de temperatura 
+
+#define MOTOR_1 A2
+ 
+
+const int TEMPERATURA_MINIMA = 50;
+const int TEMPERATURA_MAXIMA = 100;
+
+bool mostrarNumeroPrimo = false;
+bool mostrarNumeroPrimoPrevio = false;
+bool mostrarDigitoDecena = false;
+int interruptorPosicion; // Variable para almacenar la posición del interruptor
+int numeroPrimo;
+int contador = 0;
+int contadorNumerosPrimos = 0;
+
+void setup(){
+  
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(5, OUTPUT); 
+  
+  pinMode(INTERRUPTOR, INPUT_PULLUP);
+  
+  pinMode(SENSOR_TEMPERATURA, INPUT);
+  
+  pinMode(MOTOR_1, OUTPUT);
+  
+  
+  pinMode(DECENA, OUTPUT);
+  
+  pinMode(UNIDAD, OUTPUT);
+  
+  digitalWrite(UNIDAD,1);
+  digitalWrite(DECENA,1);
+ 
+  
+  Serial.begin(9600);//siempre va al final del setup
+}
+
+void loop() {
+  // Leer la posición del interruptor
+  interruptorPosicion = digitalRead(INTERRUPTOR);
+
+  if (interruptorPosicion == LOW) {
+    mostrarNumeroPrimo = true; // Cambiar a mostrar números primos
+  } else {
+    mostrarNumeroPrimo = false; // Cambiar a mostrar el contador
+  }
+
+  // Compara el estado anterior con el estado actual
+  if (mostrarNumeroPrimo != mostrarNumeroPrimoPrevio) {
+    // Se ha producido un cambio en la posición del interruptor
+    if (mostrarNumeroPrimo) {
+      // Cambió a mostrar números primos, restablece el contador a 0
+      contador = 0;
+    } else {
+      // Cambió a mostrar el contador, restablece los números primos a 0
+      contadorNumerosPrimos = 0;
+    }
+  }
+
+  mostrarNumeroPrimoPrevio = mostrarNumeroPrimo; // Actualiza el estado anterior
+
+  if (mostrarNumeroPrimo) {
+    // Mostrar números primos uno a la vez
+    if (esPrimo(contadorNumerosPrimos)) {
+      mostrarContador(contadorNumerosPrimos);
+      Serial.println(contadorNumerosPrimos);
+      delay(5); // Muestra cada número primo durante 1 segundo
+    }
+    contadorNumerosPrimos++;
+    if (contadorNumerosPrimos > 99) {
+      contadorNumerosPrimos = 0;
+    }
+  } else {
+    // Mostrar el contador
+    
+    if (contador > 99) {
+      contador = 0;  // Reiniciar el contador cuando llega a 99
+    }
+    
+    for (int i = 0; i < 100; i++) { 
+      // Comprobar si se ha cambiado la posición del interruptor
+      interruptorPosicion = digitalRead(INTERRUPTOR);
+      if (interruptorPosicion == LOW) {
+        break; // Salir del bucle for si se cambia la posición del interruptor
+      }
+      
+      contador++;  // Incrementar el contador
+      mostrarContador(contador);
+      Serial.println(contador);
+      delay(5); // Reducido tiempo de espera
+    }
+    
+  }
+   
+  float temperatura = leerTemperatura();
+  Serial.print("Temperatura: ");
+  Serial.println(temperatura);
+  
+  controlarMotor(temperatura, TEMPERATURA_MINIMA, TEMPERATURA_MAXIMA);
+
+  delay(5); // Actualiza la temperatura cada 1 segundo
+
+  // Controlar el motor en función de la temperatura
+  if (temperatura >= TEMPERATURA_MINIMA && temperatura <= TEMPERATURA_MAXIMA) {
+    digitalWrite(A2, HIGH); // Enciende la motor en A2
+    
+  } else {
+    digitalWrite(A2, LOW); // Apaga la motor en A2
+    
+  }
+}
+float leerTemperatura() {
+  int valorSensor = analogRead(SENSOR_TEMPERATURA);
+  float temperaturaCelsius =( valorSensor* (500.0 / 1023.0) ) - 50.0;
+  return temperaturaCelsius;
+}
+
+void controlarMotor(float temperatura, int tempMin, int tempMax) {
+  if (temperatura >= tempMin && temperatura <= tempMax) {
+    encenderMotor();
+  } else {
+    apagarMotor();
+  }
+}
+
+void encenderMotor() {
+  digitalWrite(MOTOR_1, HIGH);
+}
+
+void apagarMotor() {
+  digitalWrite(MOTOR_1, LOW);
+}
+
+bool esPrimo(int num) {
+  if (num <= 1) return false;
+  if (num <= 3) return true;
+  if (num % 2 == 0 || num % 3 == 0) return false;
+
+  for (int i = 5; i * i <= num; i += 6) {
+    if (num % i == 0 || num % (i + 2) == 0) return false;
+  }
+  return true;
+}
+
+void encenderDigito(int digito){
+  
+	if (digito == UNIDAD){
+        digitalWrite(UNIDAD, HIGH); 
+        digitalWrite(DECENA, LOW); 
+      	delay(5);
+    }
+  	else if (digito == DECENA){
+        digitalWrite(UNIDAD, LOW);
+        digitalWrite(DECENA, HIGH);
+      	delay(5);
+  
+    } 
+  	else {
+        digitalWrite(UNIDAD, LOW);
+        digitalWrite(DECENA, HIGH);
+    }
+}
+
+void mostrarContador(int contador) {
+  int decenas;
+  int unidades;
+
+  decenas = contador / 10;
+  unidades = contador % 10;
+
+  // Primero apaga ambos displays
+  digitalWrite(DECENA, LOW);
+  digitalWrite(UNIDAD, LOW);
+
+  for (int i = 0; i < 50; i++) {
+    // Muestra el dígito de las decenas
+    digitalWrite(DECENA, LOW);
+    digitalWrite(UNIDAD, LOW);
+    imprimirDigito(decenas);
+    digitalWrite(DECENA, HIGH);
+    delay(5);
+
+    // Muestra el dígito de las unidades
+    digitalWrite(DECENA, LOW);
+    digitalWrite(UNIDAD, LOW);
+    imprimirDigito(unidades);
+    digitalWrite(UNIDAD, HIGH);
+    delay(5);
+  }
+
+  // Asegúrate de apagar ambos displays al final
+  digitalWrite(DECENA, LOW);
+  digitalWrite(UNIDAD, LOW);
+}
+
+void imprimirDigito(int digito) {
+  // Apagar todos los segmentos
+  digitalWrite(A, HIGH);
+  digitalWrite(B, HIGH);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, HIGH);
+  digitalWrite(E, HIGH);
+  digitalWrite(F, HIGH);
+  digitalWrite(G, HIGH);
+
+  switch(digito) {
+    case 0:
+      digitalWrite(A, LOW); // A
+      digitalWrite(B, LOW); // B
+      digitalWrite(C, LOW); // C
+      digitalWrite(D, LOW); // D
+      digitalWrite(E, LOW); // E
+      digitalWrite(F, LOW); // F
+      break;
+    case 1:
+      digitalWrite(B, LOW); // B
+      digitalWrite(C, LOW); // C
+      break;
+    case 2:
+      digitalWrite(A, LOW); // A
+      digitalWrite(B, LOW); // B
+      digitalWrite(D, LOW); // D
+      digitalWrite(E, LOW); // E
+      digitalWrite(G, LOW); // G
+      break;
+    case 3:
+      digitalWrite(A, LOW); // A
+      digitalWrite(B, LOW); // B
+      digitalWrite(C, LOW); // C
+      digitalWrite(D, LOW); // D
+      digitalWrite(G, LOW); // G
+      break;
+    case 4:
+      digitalWrite(B, LOW); // B
+      digitalWrite(C, LOW); // C
+      digitalWrite(F, LOW); // F
+      digitalWrite(G, LOW); // G
+      break;
+    case 5:
+      digitalWrite(A, LOW); // A
+      digitalWrite(C, LOW); // C
+      digitalWrite(D, LOW); // D
+      digitalWrite(F, LOW); // F
+      digitalWrite(G, LOW); // G
+      break;
+    case 6:
+      digitalWrite(A, LOW); // A
+      digitalWrite(C, LOW); // C
+      digitalWrite(D, LOW); // D
+      digitalWrite(E, LOW); // E
+      digitalWrite(F, LOW); // F
+      digitalWrite(G, LOW); // G
+      break;
+    case 7:
+      digitalWrite(A, LOW); // A
+      digitalWrite(B, LOW); // B
+      digitalWrite(C, LOW); // C
+      break;
+    case 8:
+      digitalWrite(A, LOW); // A
+      digitalWrite(B, LOW); // B
+      digitalWrite(C, LOW); // C
+      digitalWrite(D, LOW); // D
+      digitalWrite(E, LOW); // E
+      digitalWrite(F, LOW); // F
+      digitalWrite(G, LOW); // G
+      break;
+    case 9:
+      digitalWrite(A, LOW); // A
+      digitalWrite(B, LOW); // B
+      digitalWrite(C, LOW); // C
+      digitalWrite(D, LOW); // D
+      digitalWrite(F, LOW); // F
+      digitalWrite(G, LOW); // G
+      break;
+  }
+}
