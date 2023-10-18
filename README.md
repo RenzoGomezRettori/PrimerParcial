@@ -10,6 +10,9 @@
 ## Proyecto: Contador
 ![Tinkercad](./Image/Arduinodosdisplay.png)
 
+## Proyecto: Interruptor Deslizante y Números Primos con Motor de aficionado
+![Tinkercad](./Image/ImagenParteDos.png)
+
 ## Descripción
 En este proyecto se diseñó un contador de 0 a 99 mostrando los numeros mediante dos display y teniendo 3 botones para poder bajar, subir o reiniciar la cuenta
 
