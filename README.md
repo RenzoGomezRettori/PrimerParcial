@@ -47,3 +47,5 @@ mediante una señal eléctrica determinada.
 ## :alien: Links del os proyectos
 - [ProyectoParteUno](https://www.tinkercad.com/things/hkAItijYbKW-primerparcial/editel)
 - [ProyectoParteDos](https://www.tinkercad.com/things/5mqfWWkbnb2-copy-of-primerparcialmotor2parte/editel?tenant=circuits)
+
+  ## Fuentes
