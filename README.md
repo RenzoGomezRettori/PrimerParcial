@@ -26,5 +26,5 @@ entre los 50° a 100° grados celcius
 
 ## Función
 
-## :alien: Link del proyecto
-- [proyecto](https://www.tinkercad.com/things/hkAItijYbKW-primerparcial/editel)
+## :alien: Link del proyecto Parte uno
+- [proyectoParteUno](https://www.tinkercad.com/things/hkAItijYbKW-primerparcial/editel)
