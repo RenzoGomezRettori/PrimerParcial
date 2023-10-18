@@ -29,6 +29,7 @@ entre los 50° a 100° grados celcius
 
 ## Boton deslizante
 ![Tinkercad](./Image/BotonDeslizante.png)
+
 Los interruptores son dispositivos eléctricos que tienen dos estados fijos, apagado y encendido, normalmente se les cambia de estado mediante un mecanismo.
 
 
