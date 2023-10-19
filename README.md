@@ -4,8 +4,10 @@
 
 
 ## Integrantes 
-- Rafael Leon
+- Rafael Alfredo León Antón
+- DNI: 95880951
 - Renzo Gomez Rettori
+- DNI: 37053986
 
 ## Proyecto: Contador
 ![Tinkercad](./Image/Arduinodosdisplay.png)
