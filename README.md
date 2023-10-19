@@ -60,8 +60,8 @@ Es un semiconductor construido con una unión PN, sensible a la incidencia de la
 correcto se polariza inversamente, con lo que se producirá una cierta circulación de corriente cuando sea excitado por la luz.
 
 ## :alien: Links del os proyectos
-- [ProyectoParteUno](https://www.tinkercad.com/things/hkAItijYbKW-primerparcial/editel)
-- [ProyectoParteDos](https://www.tinkercad.com/things/5mqfWWkbnb2-copy-of-primerparcialmotor2parte/editel?tenant=circuits)
-- [ProyectoParteTres](https://www.tinkercad.com/things/1rRnbiA9Vgf-copy-of-primerparcialmotor2parte/editel?tenant=circuits)
+- [Proyecto Parte Uno](https://www.tinkercad.com/things/hkAItijYbKW-primerparcial/editel)
+- [Proyecto Parte Dos](https://www.tinkercad.com/things/5mqfWWkbnb2-copy-of-primerparcialmotor2parte/editel?tenant=circuits)
+- [Proyecto Parte Tres](https://www.tinkercad.com/things/1rRnbiA9Vgf-copy-of-primerparcialmotor2parte/editel?tenant=circuits)
 
 ## Fuentes
