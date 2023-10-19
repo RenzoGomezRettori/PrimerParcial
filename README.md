@@ -33,6 +33,10 @@ entre los 50° a 100° grados celcius
 ## Proyecto Parte 3: Fotodiodo
 ![Tinkercad](./Image/Parte3Fotodiodo.png)
 
+## Descripción
+
+## Función
+
 ## Boton deslizante
 ![Tinkercad](./Image/BotonDeslizante.png)
 
@@ -52,8 +56,12 @@ mediante una señal eléctrica determinada.
 ## Fotodiodo
 ![Tinkercad](./Image/Fotodiodo.png)
 
+Es un semiconductor construido con una unión PN, sensible a la incidencia de la luz visible o infrarroja. Para que su funcionamiento sea
+correcto se polariza inversamente, con lo que se producirá una cierta circulación de corriente cuando sea excitado por la luz.
+
 ## :alien: Links del os proyectos
 - [ProyectoParteUno](https://www.tinkercad.com/things/hkAItijYbKW-primerparcial/editel)
 - [ProyectoParteDos](https://www.tinkercad.com/things/5mqfWWkbnb2-copy-of-primerparcialmotor2parte/editel?tenant=circuits)
+- [ProyectoParteTres](https://www.tinkercad.com/things/1rRnbiA9Vgf-copy-of-primerparcialmotor2parte/editel?tenant=circuits)
 
 ## Fuentes
