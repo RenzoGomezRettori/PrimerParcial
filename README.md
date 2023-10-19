@@ -81,7 +81,7 @@ void apagarMotor() {
 ![Tinkercad](./Image/Parte3Fotodiodo.png)
 
 ## Descripción
-Se agrego un Fotodiodo sensible a la incidencia de la luz.
+Se agrego un Fotodiodo sensible a la incidencia de la luz con una bombilla que se prenderá o apagará segun el valor del fotodiodo
 
 ## Función
 Condicional que sirve para prender o apagar la bombilla segun el valor del fotodiodo
