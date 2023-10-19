@@ -9,7 +9,7 @@
 - Renzo Gomez Rettori
 - DNI: 37053986
 
-## Proyecto: Contador
+## Proyecto Parte 1: Contador
 ![Tinkercad](./Image/Parte1DosDisplays.png)
 
 ## Descripción
@@ -18,7 +18,7 @@ para poder bajar, subir o reiniciar la cuenta
 
 ## Función
 
-## Proyecto: Interruptor Deslizante y Números Primos con Motor de aficionado
+## Proyecto Parte 2: Interruptor Deslizante y Números Primos con Motor de aficionado
 ![Tinkercad](./Image/Parte2Motor.png)
 
 
@@ -29,6 +29,9 @@ Tambien se agrega un motor, conectado a un sensor de temperatura, con la funció
 entre los 50° a 100° grados celcius
 
 ## Función
+
+## Proyecto Parte 3: Fotodiodo
+![Tinkercad](./Image/Parte3Fotodiodo.png)
 
 ## Boton deslizante
 ![Tinkercad](./Image/BotonDeslizante.png)
@@ -46,8 +49,8 @@ Es una máquina que convierte energía eléctrica en mecánica, provocando un mo
 Son componentes eléctricos y electrónicos que, en calidad de sensores, permiten medir la temperatura 
 mediante una señal eléctrica determinada.
 
-## Proyecto: Fotodiodo
-![Tinkercad](./Image/Parte3Fotodiodo.png)
+## Fotodiodo
+![Tinkercad](./Image/Fotodiodo.png)
 
 ## :alien: Links del os proyectos
 - [ProyectoParteUno](https://www.tinkercad.com/things/hkAItijYbKW-primerparcial/editel)
