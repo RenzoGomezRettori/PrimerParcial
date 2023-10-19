@@ -63,6 +63,7 @@ void loop() {
     mostrarNumeroPrimo = true; // Cambiar a mostrar números primos
   } else {
     mostrarNumeroPrimo = false; // Cambiar a mostrar el contador
+    
   }
 
   // Compara el estado anterior con el estado actual
@@ -101,6 +102,7 @@ void loop() {
       // Comprobar si se ha cambiado la posición del interruptor
       interruptorPosicion = digitalRead(INTERRUPTOR);
       if (interruptorPosicion == LOW) {
+        
         break; // Salir del bucle for si se cambia la posición del interruptor
       }
       
@@ -143,6 +145,7 @@ void controlarMotor(float temperatura, int tempMin, int tempMax) {
   }
 }
 
+        
 void encenderMotor() {
   digitalWrite(MOTOR_1, HIGH);
 }
