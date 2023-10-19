@@ -10,7 +10,7 @@
 - DNI: 37053986
 
 ## Proyecto: Contador
-![Tinkercad](./Image/Arduinodosdisplay.png)
+![Tinkercad](./Image/Parte1DosDisplays.png)
 
 ## Descripción
 En este proyecto se diseñó un contador de 0 a 99 mostrando los numeros mediante dos display y teniendo 3 botones 
@@ -19,7 +19,7 @@ para poder bajar, subir o reiniciar la cuenta
 ## Función
 
 ## Proyecto: Interruptor Deslizante y Números Primos con Motor de aficionado
-![Tinkercad](./Image/ImagenParteDos.png)
+![Tinkercad](./Image/Parte2Motor.png)
 
 
 ## Descripción
@@ -45,6 +45,9 @@ Es una máquina que convierte energía eléctrica en mecánica, provocando un mo
 
 Son componentes eléctricos y electrónicos que, en calidad de sensores, permiten medir la temperatura 
 mediante una señal eléctrica determinada.
+
+## Proyecto: Fotodiodo
+![Tinkercad](./Image/Parte3Fotodiodo.png)
 
 ## :alien: Links del os proyectos
 - [ProyectoParteUno](https://www.tinkercad.com/things/hkAItijYbKW-primerparcial/editel)
