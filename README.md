@@ -20,6 +20,7 @@ mientras apaga el otro y viceversa tan rapido que el ojo humano no lo persive y 
 
 
 ## Función
+Esta función se encarga de mostrar el contador e imprimir los digitos en los displays
 ~~~ C (lenguaje en el que esta escrito)
 void mostrarContador(int contador){
   
