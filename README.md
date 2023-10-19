@@ -13,11 +13,37 @@
 ![Tinkercad](./Image/Parte1DosDisplays.png)
 
 ## Descripción
-En este proyecto se diseñó un contador de 0 a 99 mostrando los numeros mediante dos display y teniendo 3 botones 
-para poder bajar, subir o reiniciar la cuenta
+En este proyecto se diseñó un contador de 0 a 99 mostrando los numeros mediante dos display con la técnica de multiplexación (tecnica paara que los dos displyas puedan compartis las salidas digitales, la multiplexación se encarga de prender un displays mientras apaga el otro y viceversa tan rapido que el ojo humano no lo persive y se ven los dos displyas "prendidos" todo el tiempo). Y teniendo tres botones para poder aumentar, disminuir o reiniciar la cuenta
 
 ## Función
-
+~~~ C (lenguaje en el que esta escrito)
+void mostrarContador(int contador){
+  
+  	int decenas;
+  	int unidades;
+  
+  	decenas = contador/10;
+  	unidades = contador%10;
+  
+  	digitalWrite(DECENA, LOW);
+  	digitalWrite(UNIDAD, LOW);
+ 
+    imprimirDigito(decenas);
+  
+ 	digitalWrite(DECENA, HIGH);
+  	//digitalWrite(UNIDAD, LOW);
+  
+	delay(50);
+  	digitalWrite(DECENA, LOW);
+  	digitalWrite(UNIDAD, LOW);
+  
+  	imprimirDigito(unidades);
+  
+  	digitalWrite(DECENA, LOW);
+  	digitalWrite(UNIDAD, HIGH);
+  	delay(50);
+}
+~~~
 ## Proyecto Parte 2: Interruptor Deslizante y Números Primos con Motor de aficionado
 ![Tinkercad](./Image/Parte2Motor.png)
 
