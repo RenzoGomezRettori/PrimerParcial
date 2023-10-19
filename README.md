@@ -121,3 +121,7 @@ correcto se polariza inversamente, con lo que se producirá una cierta circulaci
 - [Proyecto Parte Tres](https://www.tinkercad.com/things/1rRnbiA9Vgf-copy-of-primerparcialmotor2parte/editel?tenant=circuits)
 
 ## Fuentes
+- [Wikipedia](https://es.wikipedia.org/wiki/Wikipedia:Portada)
+- [Tinkercad](https://www.tinkercad.com/dashboard)
+
+  
